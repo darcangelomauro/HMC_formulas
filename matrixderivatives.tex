@@ -84,7 +84,7 @@ First expand $\Tr D^4$:
 &\epsilon_{i_1} \epsilon_{i_3} [1 + \epsilon] \Tr (M_{i_1} M_{i_3}) \Tr (M_{i_2} M_{i_4})   \ \  + \notag \\
 &\epsilon_{i_1} \epsilon_{i_4} [1 + \epsilon] \Tr (M_{i_1} M_{i_4}) \Tr (M_{i_2} M_{i_3})   \ \Big)
 \end{align}
-where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. The reality of the expression comes from the fact that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate. \newline
+where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. The presence of $\epsilon = \pm 1$ inside the square brackets spoils the otherwise manifest reality of the expression, which instead comes from the fact that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate. \newline
 Taking a matrix derivative with respect to $M_k$ results in non-vanishing contributions when $k=i_1, k=i_2, k=i_3$ or $k=i_4$:
 \begin{align} \label{eq:derd4}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \sum_{i_1, i_2, i_3, i_4} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) \cdot \notag \\
@@ -102,7 +102,7 @@ A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
 &\epsilon_a \epsilon_c M_c [1 + \epsilon] \Tr M_b M_d + \notag \\
 &\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
-where $\dagger$ denotes Hermitian conjugation of everything that appears on the right. One wants the matrix of Eq.(\ref{eq:derd4}) to be a Hermitian matrix. To see that this is indeed the case, it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
+where $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Again Eq.(\ref{eq:derd4}) does not look manifestly Hermitian because of the $\epsilon$ factor in the square brackets. To see that this is indeed the case, it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
 \begin{equation}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
