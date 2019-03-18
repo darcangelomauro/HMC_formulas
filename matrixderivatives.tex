@@ -118,7 +118,7 @@ and restrict the sum on the equivalence classes:
 \begin{equation}\label{eq:trunc}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{[i_1, i_2, i_3, i_4]} \frac{|[i_1, i_2, i_3, i_4]|}{2} [1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
-where $|[i_1, i_2, i_3, i_4]|$ is the cardinality of the class. Practically, $\rho^{2m}$ is the identity permutation, and the equivalence classes have one or two elements. The factor involving the cardinality of the class prevents from overcounting terms of the type $(j, k, k, j)$ (which are the only elements with class of cardinality one).\newline
+where $|[i_1, i_2, i_3, i_4]|$ is the cardinality of the class. Practically, $\rho^{2m}$ is the identity permutation, and the equivalence classes have one or two elements. The factor involving the cardinality of the class prevents from overcounting terms of the type $(a, b, b, a)$ (which are the only elements with class of cardinality one).\newline
 The sum of Eq.(\ref{eq:trunc}) can be written explicitly in the following way:
 \begin{align}\label{eq:almost}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \notag \\
@@ -136,7 +136,7 @@ Therefore Eq.(\ref{eq:almost}) simplifies to:
 \frac{\partial}{\partial M_k} \Tr D^4 &= \notag \\
 &\sum_{\substack{i_4 < i_1 \\ i_3 < i_2}}[1+\dagger]\big(\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_1, i_3, i_2, i_4)\big) + \sum_{i_1,i_2}\mathcal{B}(i_1, i_2, i_2, i_1)
 \end{align}
-which is a Hermitian matrix.
+and for the same reason terms in the first sum such that $(i_1 = i_2$ and $i_3 \neq i_4)$ or $(i_1 \neq i_2$ and $i_3 = i_4)$ need not be computed as they vanish.
 
 \subsection{A general formula for every $p$}
 The first problem is to write $\Tr D^p$ in a useful form, along the lines of Eq.(\ref{eq:trd4}).\newline
