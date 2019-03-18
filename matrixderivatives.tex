@@ -102,30 +102,33 @@ A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
 &\epsilon_a \epsilon_c M_c [1 + \epsilon] \Tr M_b M_d + \notag \\
 &\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
-Where $\dagger$ denotes Hermitian conjugation of everything that appears on the right. \newline
-Now it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
+where $\dagger$ denotes Hermitian conjugation of everything that appears on the right. One wants the matrix of Eq.(\ref{eq:derd4}) to be a Hermitian matrix. To see that this is indeed the case, it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
 \begin{equation}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
-and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the Hermitian conjugate:
-\begin{equation}
-\mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_4, i_3, i_2, i_1).
+and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ (call this permutation $\rho$) is equivalent to taking the Hermitian conjugate:
+\begin{equation}\label{eq:BBd}
+\mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_{\rho(1)}, i_{\rho(2)}, i_{\rho(3)}, i_{\rho(4)}) = \mathcal{B}(i_4, i_3, i_2, i_1).
 \end{equation}
-One can then introduce an equivalence relation $(i_1, i_2, i_3, i_4) \sim (i_4, i_3, i_2, i_1)$ and restrict the sum on the equivalence classes:
+This property can also be exploited to gain some computational efficiency. One can introduce an equivalence relation
 \begin{equation}
+(i_1, i_2, i_3, i_4) \sim (i_{\rho^m(1)}, i_{\rho^m(2)}, i_{\rho^m(3)}, i_{\rho^m(4)}), \quad m \in \mathbb{N}
+\end{equation}
+and restrict the sum on the equivalence classes:
+\begin{equation}\label{eq:trunc}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{[i_1, i_2, i_3, i_4]} \frac{|[i_1, i_2, i_3, i_4]|}{2} [1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
-where $\dagger$ denotes Hermitian conjugation of everything that appears on the right, and the factor $^{|[i_1, i_2, i_3, i_4]|} / _2$ involving the cardinality of the class prevents from overcounting terms of the type $\mathcal{B}(i_1, i_2, i_2, i_1)$.\newline
-The truncated sum can be written explicitly in the following way:
+where $|[i_1, i_2, i_3, i_4]|$ is the cardinality of the class. Practically, $\rho^{2m}$ is the identity permutation, and the equivalence classes have one or two elements. The factor involving the cardinality of the class prevents from overcounting terms of the type $(j, k, k, j)$ (which are the only elements with class of cardinality one).\newline
+The sum of Eq.(\ref{eq:trunc}) can be written explicitly in the following way:
 \begin{align}\label{eq:almost}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \notag \\
 &\sum_{\substack{i_4 < i_1 \\ i_3 < i_2}}[1+\dagger]\big(\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_1, i_3, i_2, i_4)\big) + \notag \\
 &\sum_{\substack{i_4 = i_1 \\ i_3 < i_2}}[1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4) + \sum_{\substack{i_4 < i_1 \\ i_3 = i_2}}[1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4) + \notag \\
 &\sum_{\substack{i_4 = i_1 \\ i_3 = i_2}}\mathcal{B}(i_1, i_2, i_3, i_4)
 \end{align}
-Moreover notice that the second line vanishes due to the properties of the $\omega$ matrices:
+and simplified noticing that the second line vanishes due to the properties of the $\omega$ matrices:
 \begin{equation}
-\Tr(\omega_{\sigma(i_1)} \omega_{\sigma(i_2)} \omega_{\sigma(j)} \omega_{\sigma(k)}) \sim \Tr(\omega_j \omega_k) = 0 \qquad \text{if} \ \ i_1 = i_2 \ \text{and} \ j \neq k
+\Tr(\omega_{\sigma(i_1)} \omega_{\sigma(i_2)} \omega_{\sigma(j)} \omega_{\sigma(k)}) \propto \Tr(\omega_j \omega_k) = 0 \qquad \text{if} \ \ i_1 = i_2 \ \text{and} \ j \neq k
 \end{equation}
 for any permutation $\sigma$ acting on $\{i_1, i_2, j, k\}$.\newline
 Therefore Eq.(\ref{eq:almost}) simplifies to:
