@@ -75,34 +75,34 @@ where $C \equiv \Tr \omega_i^2$ is the dimension of the Clifford module.
 First expand $\Tr D^4$:
 \begin{align}\label{eq:trd4}
 \Tr D^4 &= \sum_{i_1, i_2, i_3, i_4} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) \cdot \notag \\
-\Big( \ &n [1+\epsilon_{i_1} \epsilon_{i_2} \epsilon_{i_3} \epsilon_{i_4} *] \Tr (M_{i_1} M_{i_2} M_{i_3} M_{i_4})  \ \  + \notag \\
-&\Tr M_{i_1} [\epsilon_{i_1} + \epsilon_{i_2} \epsilon_{i_3} \epsilon_{i_4} *] \Tr ( M_{i_2} M_{i_3} M_{i_4})  \ \  + \notag \\
-&\Tr M_{i_2} [\epsilon_{i_2}  + \epsilon_{i_1} \epsilon_{i_3} \epsilon_{i_4} *] \Tr (M_{i_1} M_{i_3} M_{i_4}) \ \  + \notag \\
-&\Tr M_{i_3} [\epsilon_{i_3} + \epsilon_{i_1} \epsilon_{i_2} \epsilon_{i_4} *] \Tr (M_{i_1} M_{i_2} M_{i_4})  \ \  + \notag \\
-&\Tr M_{i_4} [\epsilon_{i_4} + \epsilon_{i_1} \epsilon_{i_2} \epsilon_{i_3} *] \Tr (M_{i_1} M_{i_2} M_{i_3})  \ \  + \notag \\
-&[\epsilon_{i_1} \epsilon_{i_2} + \epsilon_{i_3} \epsilon_{i_4}] \Tr (M_{i_1} M_{i_2} ) \Tr (M_{i_3} M_{i_4})   \ \  + \notag \\
-&[\epsilon_{i_1} \epsilon_{i_3} + \epsilon_{i_2} \epsilon_{i_4}] \Tr (M_{i_1} M_{i_3}) \Tr (M_{i_2} M_{i_4})   \ \  + \notag \\
-&[\epsilon_{i_1} \epsilon_{i_4} + \epsilon_{i_2} \epsilon_{i_3}] \Tr (M_{i_1} M_{i_4}) \Tr (M_{i_2} M_{i_3})   \ \Big)
+\Big( \ &n [1+\epsilon \ *] \Tr (M_{i_1} M_{i_2} M_{i_3} M_{i_4})  \ \  + \notag \\
+&\epsilon_{i_1} \Tr M_{i_1} [1 + \epsilon \ *] \Tr ( M_{i_2} M_{i_3} M_{i_4})  \ \  + \notag \\
+&\epsilon_{i_2} \Tr M_{i_2} [1  + \epsilon \ *] \Tr (M_{i_1} M_{i_3} M_{i_4}) \ \  + \notag \\
+&\epsilon_{i_3} \Tr M_{i_3} [1 + \epsilon \ *] \Tr (M_{i_1} M_{i_2} M_{i_4})  \ \  + \notag \\
+&\epsilon_{i_4} \Tr M_{i_4} [1 + \epsilon \ *] \Tr (M_{i_1} M_{i_2} M_{i_3})  \ \  + \notag \\
+&\epsilon_{i_1} \epsilon_{i_2} [1 + \epsilon] \Tr (M_{i_1} M_{i_2} ) \Tr (M_{i_3} M_{i_4})   \ \  + \notag \\
+&\epsilon_{i_1} \epsilon_{i_3} [1 + \epsilon] \Tr (M_{i_1} M_{i_3}) \Tr (M_{i_2} M_{i_4})   \ \  + \notag \\
+&\epsilon_{i_1} \epsilon_{i_4} [1 + \epsilon] \Tr (M_{i_1} M_{i_4}) \Tr (M_{i_2} M_{i_3})   \ \Big)
 \end{align}
-where $*$ denotes complex conjugation of everything that appears on the right, and the relation $M^T = M^*$ has been used. The reality of the expression comes from the fact that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate. \newline
+where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. The reality of the expression comes from the fact that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate. \newline
 Taking a matrix derivative with respect to $M_k$ results in non-vanishing contributions when $k=i_1, k=i_2, k=i_3$ or $k=i_4$:
 \begin{align} \label{eq:derd4}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \sum_{i_1, i_2, i_3, i_4} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) \cdot \notag \\
-\Big( &\delta_{ki_1} A(i_1, i_2, i_3, i_4) + \delta_{ki_2} A(i_2, i_3, i_4, i_1) + \notag \\
-&\delta_{ki_3} A(i_3, i_4, i_1, i_2) + \delta_{ki_4} A(i_4, i_1, i_2, i_3) \Big)
+\Big( &\delta_{ki_1} A(i_1, i_2, i_3, i_4)^T + \delta_{ki_2} A(i_2, i_3, i_4, i_1)^T + \notag \\
+&\delta_{ki_3} A(i_3, i_4, i_1, i_2)^T + \delta_{ki_4} A(i_4, i_1, i_2, i_3)^T \Big)
 \end{align}
 where $A(a, b, c, d )$ is the following $n \times n$ matrix:
 \begin{align}
-A(a,b,c,d) \equiv \ &n [\T+\epsilon_a \epsilon_b \epsilon_c \epsilon_d *] M_b M_c M_d + \notag \\
-&I [\epsilon_a + \epsilon_b \epsilon_c \epsilon_d *] \Tr M_b M_c M_d  + \notag \\
-&\Tr M_b [\epsilon_b \T + \epsilon_a \epsilon_c \epsilon_d *] M_c M_d + \notag \\
-&\Tr M_c [\epsilon_c \T + \epsilon_a \epsilon_b \epsilon_d *] M_b M_d + \notag \\
-&\Tr M_d [\epsilon_d \T + \epsilon_a \epsilon_b \epsilon_c *] M_b M_c + \notag \\
-&M_b^T [ \epsilon_a \epsilon_b + \epsilon_c \epsilon_d] \Tr M_c M_d + \notag \\
-&M_c^T [ \epsilon_a \epsilon_c + \epsilon_b \epsilon_d] \Tr M_b M_d + \notag \\
-&M_d^T [ \epsilon_a \epsilon_d + \epsilon_b \epsilon_c] \Tr M_b M_c
+A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
+&\epsilon_a I [1 + \epsilon \ *] \Tr M_b M_c M_d  + \notag \\
+&\epsilon_b \Tr M_b [1 + \epsilon \ \dagger] M_c M_d + \notag \\
+&\epsilon_c \Tr M_c [1 + \epsilon \ \dagger] M_b M_d + \notag \\
+&\epsilon_d \Tr M_d [1 + \epsilon \ \dagger] M_b M_c + \notag \\
+&\epsilon_a \epsilon_b M_b [1 + \epsilon] \Tr M_c M_d + \notag \\
+&\epsilon_a \epsilon_c M_c [1 + \epsilon] \Tr M_b M_d + \notag \\
+&\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
-with $\T$ denoting transposition of everything that appears on the right. \newline
+Where $\dagger$ denotes Hermitian conjugation of everything that appears on the right. \newline
 Now it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
 \begin{equation}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
