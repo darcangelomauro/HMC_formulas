@@ -84,7 +84,7 @@ First expand $\Tr D^4$:
 &\epsilon_{i_1} \epsilon_{i_3} [1 + \epsilon] \Tr (M_{i_1} M_{i_3}) \Tr (M_{i_2} M_{i_4})   \ \  + \notag \\
 &\epsilon_{i_1} \epsilon_{i_4} [1 + \epsilon] \Tr (M_{i_1} M_{i_4}) \Tr (M_{i_2} M_{i_3})   \ \Big)
 \end{align}
-where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. The presence of $\epsilon = \pm 1$ inside the square brackets spoils the otherwise manifest reality of the expression, which instead comes from the fact that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate. \newline
+where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. Since $D$ is Hermitian, the expression must be real. It is not immediate to see that this is the case because of the $\epsilon = \pm 1$ factor inside the square brackets. Reality nonetheless holds, and becomes manifest by observing that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate (in fact, this is not the only index exchange that amounts to complex conjugation). \newline
 Taking a matrix derivative with respect to $M_k$ results in non-vanishing contributions when $k=i_1, k=i_2, k=i_3$ or $k=i_4$:
 \begin{align} \label{eq:derd4}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \sum_{i_1, i_2, i_3, i_4} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) \cdot \notag \\
@@ -102,15 +102,25 @@ A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
 &\epsilon_a \epsilon_c M_c [1 + \epsilon] \Tr M_b M_d + \notag \\
 &\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
-and $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Again Eq.(\ref{eq:derd4}) does not look manifestly Hermitian because of the $\epsilon$ factor in the square brackets. To see that this is indeed the case, it is useful to write Eq.(\ref{eq:derd4}) symbolically as:
+and $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Again, to see that Eq.(\ref{eq:derd4}) defines a Hermitian matrix, it is useful to rewrite it symbolically as:
 \begin{equation}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
-and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ (call this permutation $\rho$) is equivalent to taking the Hermitian conjugate:
+and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the Hermitian conjugate:
 \begin{equation}\label{eq:BBd}
-\mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_{\rho(1)}, i_{\rho(2)}, i_{\rho(3)}, i_{\rho(4)}) = \mathcal{B}(i_4, i_3, i_2, i_1).
+\mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_4, i_3, i_2, i_1).
 \end{equation}
-This property can also be exploited to gain some computational efficiency. One can introduce an equivalence relation
+In fact, if $S_4$ is the symmetric group of order four acting on the set of indices $\{i_1, i_2, i_3, i_4\}$, there is a larger subgroup of $S_4$ whose action produces a trivial change in $\mathcal{B}(i_1, i_2, i_3, i_4)$. Namely, the Klein four-group, a normal subgroup of $S_4$, which in terms of permutations reads:
+\begin{equation}
+K_4 = \{(), (13)(24), (12)(34), (14)(23)\} \equiv \{\iota, \rho, \sigma, \tau \}.
+\end{equation}
+The change in $\mathcal{B}$ induced by the action of $K_4$ is the following:
+\begin{align}
+\mathcal{B}(i_{\rho(1)}, i_{\rho(2)}, i_{\rho(3)}, i_{\rho(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4) \\
+\mathcal{B}(i_{\sigma(1)}, i_{\sigma(2)}, i_{\sigma(3)}, i_{\sigma(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} \\
+\mathcal{B}(i_{\tau(1)}, i_{\tau(2)}, i_{\tau(3)}, i_{\tau(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger}
+\end{align}
+This property can be exploited to gain some computational efficiency. One can introduce an equivalence relation
 \begin{equation}
 (i_1, i_2, i_3, i_4) \sim (i_{\rho^m(1)}, i_{\rho^m(2)}, i_{\rho^m(3)}, i_{\rho^m(4)}), \quad m \in \mathbb{N}
 \end{equation}
