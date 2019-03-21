@@ -103,14 +103,14 @@ A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
 &\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
 and $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Again, to see that Eq.(\ref{eq:derd4}) defines a Hermitian matrix, it is useful to rewrite it symbolically as:
-\begin{equation}
+\begin{equation}\label{eq:symb}
 \frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
 \end{equation}
 and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the Hermitian conjugate:
 \begin{equation}\label{eq:BBd}
 \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_4, i_3, i_2, i_1).
 \end{equation}
-In fact, if $S_4$ is the symmetric group of order four acting on the set of indices $\{i_1, i_2, i_3, i_4\}$, there is a larger subgroup of $S_4$ whose action produces a trivial change in $\mathcal{B}(i_1, i_2, i_3, i_4)$. Namely, the Klein four-group, a normal subgroup of $S_4$, which in terms of permutations reads:
+In fact, if $S_4$ is the symmetric group of order four acting on the set of indices $\{i_1, i_2, i_3, i_4\}$, there is a larger subgroup of $S_4$ whose action produces a simple change in $\mathcal{B}(i_1, i_2, i_3, i_4)$. Namely, the Klein four-group, a normal subgroup of $S_4$, which in terms of permutations reads:
 \begin{equation}
 K_4 = \{(), (13)(24), (12)(34), (14)(23)\} \equiv \{\iota, \rho, \sigma, \tau \}.
 \end{equation}
@@ -120,7 +120,27 @@ The change in $\mathcal{B}$ induced by the action of $K_4$ is the following:
 \mathcal{B}(i_{\sigma(1)}, i_{\sigma(2)}, i_{\sigma(3)}, i_{\sigma(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} \\
 \mathcal{B}(i_{\tau(1)}, i_{\tau(2)}, i_{\tau(3)}, i_{\tau(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger}
 \end{align}
-This property can be exploited to gain some computational efficiency. One can introduce an equivalence relation
+This property can be exploited to gain some computational efficiency.\newline
+Start by considering the terms in Eq.(\ref{eq:symb}) in which all indices are different from each other:
+\begin{equation}
+\sum_{\substack{i_j \neq i_k \\ j,k=1,2,3,4}} \mathcal{B}(i_1, i_2, i_3, i_4).
+\end{equation}
+Many terms in this sum are the same (possibly up to Hermitian conjugation) due to the action of $K_4$. Therefore the sum can be written in the following way:
+\begin{align}
+\sum_{i_1 > i_2 > i_3 > i_4} 2[1+\dagger] \Big\{ &\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_3, i_1, i_2, i_4) + \mathcal{B}(i_4, i_1, i_3, i_2) + \notag \\ 
+&\mathcal{B}(i_2, i_1, i_3, i_4) + \mathcal{B}(i_3, i_2, i_1, i_4) + \mathcal{B}(i_4, i_2, i_3, i_1) \Big\}
+\end{align}
+where the sum is now restricted to $i_1 > i_2 > i_3 > i_4$ and the six terms inside curly braces are obtained by acting on $\{i_1, i_2, i_3, i_4\}$ with a representative from the cosets of $K_4 \subset S_4$. This form minimizes the number of calculations.\newline
+Next, 
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+\newline
+One can introduce an equivalence relation
 \begin{equation}
 (i_1, i_2, i_3, i_4) \sim (i_{\rho^m(1)}, i_{\rho^m(2)}, i_{\rho^m(3)}, i_{\rho^m(4)}), \quad m \in \mathbb{N}
 \end{equation}
