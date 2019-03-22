@@ -121,7 +121,13 @@ The only terms that contribute when all indices are different are the following:
 \begin{equation} \label{eq:alldifferent}
 \sum_{i_1 > i_2 > i_3} [1+\dagger] \Big( \mathcal{B}_k(i_1, i_2, i_3) + \mathcal{B}_k(i_1, i_3, i_2) + \mathcal{B}_k(i_2, i_1, i_3) \Big).
 \end{equation}
-The three inequivalent permutations of indices that appear in this formula are based on a group-theoretical argument that will generalize easily to powers of $D$ higher than 4. First consider the symmetric group of order three $S_3$ acting on the set of indices $\{i_1, i_2, i_3\}$, and the subgroup of permutations that induce a simple change in $\mathcal{B}$, which in this case is $H = \{(), (13)\} \cong S_2$ (the first element being the identical permutation, and the second the exchange $i_1 \leftrightarrow i_3$ which induces $\mathcal{B} \rightarrow \mathcal{B}^\dagger$). The idea is then to restrict the sum to $i_1 > i_2 > i_3$ and quotient out the action of $H$ by introducing a suitable pre-factor that accounts for its action (in this case $[1+\dagger]$). Practically, the inequivalent permutations of indices that appear in Eq.(\ref{eq:alldifferent}) are found by computing the (left or right) cosets of $H \subset S_3$ and acting on $\{i_1, i_2, i_3\}$ with a representative from each coset. In this case the representatives where chosen to be $(), (23), (12)$.\newline
+The three inequivalent permutations of indices that appear in this formula are based on a group-theoretical argument that will generalize easily to powers of $D$ higher than 4. First consider the symmetric group of order three $S_3$ acting on the set of indices $\{i_1, i_2, i_3\}$, and the subgroup of permutations that induce a simple change in $\mathcal{B}$, which in this case is $H = \{(), (13)\} \cong S_2$ (the first element being the identical permutation, and the second the exchange $i_1 \leftrightarrow i_3$ which induces $\mathcal{B} \rightarrow \mathcal{B}^\dagger$). The idea is then to restrict the sum to $i_1 > i_2 > i_3$ and quotient out the action of $H$ by introducing a suitable pre-factor that accounts for it (in this case $[1+\dagger]$). Practically, the inequivalent permutations of indices that appear in Eq.(\ref{eq:alldifferent}) are found by computing the (left or right) cosets of $H \subset S_3$ and acting on $\{i_1, i_2, i_3\}$ with a representative from each coset. In this case the representatives where chosen to be $(), (23), (12)$.\newline
+What is left are terms in which at least two indices are equal. These are:
+\begin{align} \label{eq:someequal}
+\sum_{i_1 > i_2} [1+\dagger] \Big( \mathcal{B}_k(i_1, i_1, i_2) &+ \mathcal{B}_k(i_1, i_2, i_2) \Big) + \notag \\
+&\sum_{i_1 \neq i_2} \mathcal{B}_k(i_1, i_2, i_1) + \sum_{i} \mathcal{B}_k(i,i,i).
+\end{align}
+
 
 
 
