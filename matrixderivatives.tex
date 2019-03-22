@@ -112,7 +112,7 @@ To see that Eq.(\ref{eq:derd4}) defines a Hermitian matrix, notice that an excha
 \begin{equation}\label{eq:BBd}
 \mathcal{B}_k(i_1, i_2, i_3)^{\dagger} = \mathcal{B}_k(i_3, i_2, i_1)
 \end{equation}
-therefore Eq.(\ref{eq:derd4}) reduces to:
+therefore the sum in Eq.(\ref{eq:derd4}) reduces to:
 \begin{equation}\label{eq:splitsum}
 \sum_{\substack{i_1 > i_3 \\ i_2}} [1+\dagger] \mathcal{B}_k(i_1, i_2, i_3) + \sum_{i_1, i_2} \mathcal{B}_k(i_1, i_2, i_1).
 \end{equation}
@@ -127,10 +127,16 @@ What is left are terms in which at least two indices are equal. These are:
 \sum_{i_1 > i_2} [1+\dagger] \Big( \mathcal{B}_k(i_1, i_1, i_2) &+ \mathcal{B}_k(i_1, i_2, i_2) \Big) + \notag \\
 &\sum_{i_1 \neq i_2} \mathcal{B}_k(i_1, i_2, i_1) + \sum_{i} \mathcal{B}_k(i,i,i).
 \end{align}
-
-
-
-
+At this point, a useful property of the $\omega$ matrices can be exploited to simplify both Eq.(\ref{eq:alldifferent}) and Eq.(\ref{eq:someequal}):
+\begin{equation}\label{eq:gamma0}
+\Tr(\omega_{\sigma(i_1)} \omega_{\sigma(i_2)} \omega_{\sigma(j)} \omega_{\sigma(k)}) \propto \Tr(\omega_j \omega_k) = 0 \qquad \text{if} \ \ i_1 = i_2 \ \text{and} \ j \neq k
+\end{equation}
+for any permutation $\sigma$ acting on $\{i_1, i_2, j, k\}$. In other words, if two indices are the same and the other two are different, the trace on the $\omega$ matrices vanishes.\newline
+Putting together Eq.(\ref{eq:alldifferent}), Eq.(\ref{eq:someequal}) and Eq.(\ref{eq:gamma0}), the final formula for $\partial_k \Tr D^4$ reads:
+\begin{align} 
+\frac{\partial}{\partial M_k} \Tr D^4 = 4 \Bigg[ \sum_{\substack{i_1 > i_2 > i_3 \\ i_1,i_2,i_3 \neq k}} &[1+\dagger] \Big( \mathcal{B}_k(i_1, i_2, i_3) + \mathcal{B}_k(i_1, i_3, i_2) + \mathcal{B}_k(i_2, i_1, i_3) \Big) \notag \\
+&+ \sum_{\substack{i \\ i \neq k}} [1+\dagger] \mathcal{B}_k(i, i, k) + \sum_{\substack{i \\ i \neq k}} \mathcal{B}_k(i, k, i) + \mathcal{B}_k(k,k,k) \Bigg].
+\end{align}
 \subsection{A general formula for every $p$}
 The first problem is to write $\Tr D^p$ in a useful form, along the lines of Eq.(\ref{eq:trd4}).\newline
 $\Tr D^p$ expands to:
