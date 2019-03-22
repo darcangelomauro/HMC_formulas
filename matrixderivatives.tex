@@ -64,7 +64,7 @@ When $p = 2$ the $M_i$ matrices are decoupled:
 \Tr D^2 = \sum_i \Tr \omega_i^2 (2 n \Tr M_i^2 + 2 \epsilon_i (\Tr M_i)^2).
 \end{equation} 
 Taking a derivative with respect to $M_k$ yields:
-\begin{align}
+\begin{align}\label{eq:As}
 \frac{\partial}{\partial M_k} \left( \sum_i \Tr \omega_i^2 (2 n \Tr M_i^2 + 2 \epsilon_i (\Tr M_i)^2) \right) = \notag \\
 \sum_i \delta_{ik} \Tr \omega_i^2 \left( 4 n M_i^T + 4 \epsilon_i (\Tr M_i) I \right) = \notag \\
 4 C \left( n M_k^T + \epsilon_k (\Tr M_k) I \right)
@@ -86,7 +86,7 @@ First expand $\Tr D^4$:
 \end{align}
 where $*$ denotes complex conjugation of everything that appears on the right, $\epsilon$ is defined as the product $\epsilon \equiv \epsilon_{i_1}\epsilon_{i_2}\epsilon_{i_3}\epsilon_{i_4}$, and the relation $M^T = M^*$ has been used. Since $D$ is Hermitian, the expression must be real. It is not immediate to see that this is the case because of the $\epsilon = \pm 1$ factor inside the square brackets. Reality nonetheless holds, and becomes manifest by observing that a simultaneous index exchange $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the complex conjugate (in fact, this is not the only index exchange that amounts to complex conjugation). \newline
 Taking a matrix derivative with respect to $M_k$ results in non-vanishing contributions when $k=i_1, k=i_2, k=i_3$ or $k=i_4$:
-\begin{align} \label{eq:derd4}
+\begin{align}
 \frac{\partial}{\partial M_k} \Tr D^4 &= \sum_{i_1, i_2, i_3, i_4} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) \cdot \notag \\
 \Big( &\delta_{ki_1} A(i_1, i_2, i_3, i_4)^T + \delta_{ki_2} A(i_2, i_3, i_4, i_1)^T + \notag \\
 &\delta_{ki_3} A(i_3, i_4, i_1, i_2)^T + \delta_{ki_4} A(i_4, i_1, i_2, i_3)^T \Big)
@@ -102,72 +102,28 @@ A(a,b,c,d) \equiv \ &n [1+\epsilon \ \dagger] M_b M_c M_d + \notag \\
 &\epsilon_a \epsilon_c M_c [1 + \epsilon] \Tr M_b M_d + \notag \\
 &\epsilon_a \epsilon_d M_d [1 + \epsilon] \Tr M_b M_c
 \end{align}
-and $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Again, to see that Eq.(\ref{eq:derd4}) defines a Hermitian matrix, it is useful to rewrite it symbolically as:
-\begin{equation}\label{eq:symb}
-\frac{\partial}{\partial M_k} \Tr D^4 = \sum_{i_1, i_2, i_3, i_4} \mathcal{B}(i_1, i_2, i_3, i_4)
-\end{equation}
-and notice that a simultaneous exchange of indices $i_1 \leftrightarrow i_4$ and $i_2 \leftrightarrow i_3$ is equivalent to taking the Hermitian conjugate:
+and $\dagger$ denotes Hermitian conjugation of everything that appears on the right. Upon relabeling the indices and cycling the $\omega$ matrices in the trace, the equation becomes:
+\begin{align}\label{eq:derd4}
+\frac{\partial}{\partial M_k} \Tr D^4 &= 4 \sum_{i_1, i_2, i_3, i_4} \delta_{ki_1} \Tr (\omega_{i_1} \omega_{i_2} \omega_{i_3} \omega_{i_4}) A(i_1, i_2, i_3, i_4)^T \notag \\
+&= 4 \sum_{i_1, i_2, i_3} \Tr (\omega_{k} \omega_{i_1} \omega_{i_2} \omega_{i_3}) A(k, i_1, i_2, i_3)^T \equiv 4 \sum_{i_1, i_2, i_3} \mathcal{B}_k(i_1, i_2, i_3)
+\end{align}
+with $\mathcal{B}_k(a, b, c)$ denoting the generic term in the sum.\newline
+To see that Eq.(\ref{eq:derd4}) defines a Hermitian matrix, notice that an exchange of indices $i_1 \leftrightarrow i_3$ is equivalent to taking the Hermitian conjugate:
 \begin{equation}\label{eq:BBd}
-\mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} = \mathcal{B}(i_4, i_3, i_2, i_1).
+\mathcal{B}_k(i_1, i_2, i_3)^{\dagger} = \mathcal{B}_k(i_3, i_2, i_1)
 \end{equation}
-In fact, if $S_4$ is the symmetric group of order four acting on the set of indices $\{i_1, i_2, i_3, i_4\}$, there is a larger subgroup of $S_4$ whose action produces a simple change in $\mathcal{B}(i_1, i_2, i_3, i_4)$. Namely, the Klein four-group, a normal subgroup of $S_4$, which in terms of permutations reads:
-\begin{equation}
-K_4 = \{(), (13)(24), (12)(34), (14)(23)\} \equiv \{\iota, \rho, \sigma, \tau \}.
+therefore Eq.(\ref{eq:derd4}) reduces to:
+\begin{equation}\label{eq:splitsum}
+\sum_{\substack{i_1 > i_3 \\ i_2}} [1+\dagger] \mathcal{B}_k(i_1, i_2, i_3) + \sum_{i_1, i_2} \mathcal{B}_k(i_1, i_2, i_1).
 \end{equation}
-The change in $\mathcal{B}$ induced by the action of $K_4$ is the following:
-\begin{align}
-\mathcal{B}(i_{\rho(1)}, i_{\rho(2)}, i_{\rho(3)}, i_{\rho(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4) \\
-\mathcal{B}(i_{\sigma(1)}, i_{\sigma(2)}, i_{\sigma(3)}, i_{\sigma(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger} \\
-\mathcal{B}(i_{\tau(1)}, i_{\tau(2)}, i_{\tau(3)}, i_{\tau(4)}) &= \mathcal{B}(i_1, i_2, i_3, i_4)^{\dagger}
-\end{align}
-This property can be exploited to gain some computational efficiency.\newline
-Start by considering the terms in Eq.(\ref{eq:symb}) in which all indices are different from each other:
-\begin{equation}
-\sum_{\substack{i_j \neq i_k \\ j,k=1,2,3,4}} \mathcal{B}(i_1, i_2, i_3, i_4).
+In fact, by looking at the form of $\mathcal{B}$, it is clear that terms in the sum are qualitatively different based on the number of indices that coincide. Therefore it would be computationally convenient to write Eq.(\ref{eq:splitsum}) in a way that emphazises this difference.\newline
+The only terms that contribute when all indices are different are the following:
+\begin{equation} \label{eq:alldifferent}
+\sum_{i_1 > i_2 > i_3} [1+\dagger] \Big( \mathcal{B}_k(i_1, i_2, i_3) + \mathcal{B}_k(i_1, i_3, i_2) + \mathcal{B}_k(i_2, i_1, i_3) \Big).
 \end{equation}
-Many terms in this sum are the same (possibly up to Hermitian conjugation) due to the action of $K_4$. Therefore the sum can be written in the following way:
-\begin{align}
-\sum_{i_1 > i_2 > i_3 > i_4} 2[1+\dagger] \Big\{ &\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_3, i_1, i_2, i_4) + \mathcal{B}(i_4, i_1, i_3, i_2) + \notag \\ 
-&\mathcal{B}(i_2, i_1, i_3, i_4) + \mathcal{B}(i_3, i_2, i_1, i_4) + \mathcal{B}(i_4, i_2, i_3, i_1) \Big\}
-\end{align}
-where the sum is now restricted to $i_1 > i_2 > i_3 > i_4$ and the six terms inside curly braces are obtained by acting on $\{i_1, i_2, i_3, i_4\}$ with a representative from the cosets of $K_4 \subset S_4$. This form minimizes the number of calculations.\newline
-Next, 
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
-\newline
-One can introduce an equivalence relation
-\begin{equation}
-(i_1, i_2, i_3, i_4) \sim (i_{\rho^m(1)}, i_{\rho^m(2)}, i_{\rho^m(3)}, i_{\rho^m(4)}), \quad m \in \mathbb{N}
-\end{equation}
-and restrict the sum on the equivalence classes:
-\begin{equation}\label{eq:trunc}
-\frac{\partial}{\partial M_k} \Tr D^4 = \sum_{[i_1, i_2, i_3, i_4]} \frac{|[i_1, i_2, i_3, i_4]|}{2} [1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4)
-\end{equation}
-where $|[i_1, i_2, i_3, i_4]|$ is the cardinality of the class. Practically, $\rho^{2m}$ is the identity permutation, and the equivalence classes have one or two elements. The factor involving the cardinality of the class prevents from overcounting terms of the type $(a, b, b, a)$ (which are the only elements with class of cardinality one).\newline
-The sum of Eq.(\ref{eq:trunc}) can be written explicitly in the following way:
-\begin{align}\label{eq:almost}
-\frac{\partial}{\partial M_k} \Tr D^4 &= \notag \\
-&\sum_{\substack{i_4 < i_1 \\ i_3 < i_2}}[1+\dagger]\big(\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_1, i_3, i_2, i_4)\big) + \notag \\
-&\sum_{\substack{i_4 = i_1 \\ i_3 < i_2}}[1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4) + \sum_{\substack{i_4 < i_1 \\ i_3 = i_2}}[1+\dagger]\mathcal{B}(i_1, i_2, i_3, i_4) + \notag \\
-&\sum_{\substack{i_4 = i_1 \\ i_3 = i_2}}\mathcal{B}(i_1, i_2, i_3, i_4)
-\end{align}
-and simplified noticing that the second line vanishes due to the properties of the $\omega$ matrices:
-\begin{equation}\label{eq:gamma0}
-\Tr(\omega_{\sigma(i_1)} \omega_{\sigma(i_2)} \omega_{\sigma(j)} \omega_{\sigma(k)}) \propto \Tr(\omega_j \omega_k) = 0 \qquad \text{if} \ \ i_1 = i_2 \ \text{and} \ j \neq k
-\end{equation}
-for any permutation $\sigma$ acting on $\{i_1, i_2, j, k\}$.\newline
-Therefore Eq.(\ref{eq:almost}) simplifies to:
-\begin{align}\label{eq:notquite}
-\frac{\partial}{\partial M_k} \Tr D^4 &
-= \notag \\
-&\sum_{\substack{i_4 < i_1 \\ i_3 < i_2}}[1+\dagger]\big(\mathcal{B}(i_1, i_2, i_3, i_4) + \mathcal{B}(i_1, i_3, i_2, i_4)\big) + \sum_{i_1, i_2}\mathcal{B}(i_1, i_2, i_2, i_1).
-\end{align}
-For the same reason, terms in the first sum for which ($i_1=i_2$ and $i_3 \neq i_4$) or ($i_1=i_3$ and $i_2 \neq i_4$) need not be computed as they vanish. 
+The three inequivalent permutations of indices that appear in this formula are based on a group-theoretical argument that will generalize easily to powers of $D$ higher than 4. First consider the symmetric group of order three $S_3$ acting on the set of indices $\{i_1, i_2, i_3\}$, and the subgroup of permutations that induce a simple change in $\mathcal{B}$, which in this case is $H = \{(), (13)\} \cong S_2$ (the first element being the identical permutation, and the second the exchange $i_1 \leftrightarrow i_3$ which induces $\mathcal{B} \rightarrow \mathcal{B}^\dagger$). The idea is then to restrict the sum to $i_1 > i_2 > i_3$ and quotient out the action of $H$ by introducing a suitable pre-factor that accounts for its action (in this case $[1+\dagger]$). Practically, the inequivalent permutations of indices that appear in Eq.(\ref{eq:alldifferent}) are found by computing the (left or right) cosets of $H \subset S_3$ and acting on $\{i_1, i_2, i_3\}$ with a representative from each coset. In this case the representatives where chosen to be $(), (23), (12)$.\newline
+
+
 
 \subsection{A general formula for every $p$}
 The first problem is to write $\Tr D^p$ in a useful form, along the lines of Eq.(\ref{eq:trd4}).\newline
