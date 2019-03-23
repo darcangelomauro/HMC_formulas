@@ -137,6 +137,7 @@ Putting together Eq.(\ref{eq:alldifferent}), Eq.(\ref{eq:someequal}) and Eq.(\re
 \frac{\partial}{\partial M_k} \Tr D^4 = 4 \Bigg[ \sum_{\substack{i_1 > i_2 > i_3 \\ i_1,i_2,i_3 \neq k}} &[1+\dagger] \Big( \mathcal{B}_k(i_1, i_2, i_3) + \mathcal{B}_k(i_1, i_3, i_2) + \mathcal{B}_k(i_2, i_1, i_3) \Big) \notag \\
 &+ \sum_{\substack{i \\ i \neq k}} \Big( [1+\dagger] \mathcal{B}_k(i, i, k) + \mathcal{B}_k(i, k, i) \Big) + \mathcal{B}_k(k,k,k) \Bigg].
 \end{align}
+The explicit form of $\mathcal{B}_k(i,i,k), \ \mathcal{B}_k(i,k,i)$ and $\mathcal{B}_k(k,k,k)$ is given in Appendix A.
 \subsection{A general formula for every $p$}
 The first problem is to write $\Tr D^p$ in a useful form, along the lines of Eq.(\ref{eq:trd4}).\newline
 $\Tr D^p$ expands to:
@@ -194,10 +195,34 @@ r=0 \quad &\longrightarrow \quad n[1+\epsilon_{i_1} \ldots \epsilon_{i_p}*]\Tr (
 r=1 \quad &\longrightarrow \quad \sum_{k_1 = 1}^p \epsilon_{i_{k_1}}  \Tr (M_{i_{k_1}}) [1+\epsilon_{i_1} \ldots \epsilon_{i_p}*] \D_{i_{k_1}} \Tr (M_{i_1} \ldots M_{i_p}) \\
 r=2 \quad &\longrightarrow \quad \sum_{k_1<k_2 = 1}^p \epsilon_{i_{k_1}} \epsilon_{i_{k_2}}  \Tr (M_{i_{k_1}} M_{i_{k_2}}) [1+\epsilon_{i_1} \ldots \epsilon_{i_p}*] \D_{i_{k_2}} \D_{i_{k_1}} \Tr (M_{i_1} \ldots M_{i_p}).
 \end{align}
-
-
-
-
+\subsection{Appendix A}
+The explicit form of $\mathcal{B}_k(i,i,k), \ \mathcal{B}_k(i,k,i)$ and $\mathcal{B}_k(k,k,k)$ is given.
+\begin{align}
+\mathcal{B}_k(i,i,k) &= \Tr(\omega_k \omega_i \omega_i \omega_k)A(k, i, i, k)^T = CA(k,i,i,k)^T \\ \notag
+\mathcal{B}_k(i,k,i) &= \Tr(\omega_k \omega_i \omega_k \omega_i)A(k, i, k, i)^T \\ \notag
+\mathcal{B}_k(k,k,k) &= \Tr(\omega_k \omega_k \omega_k \omega_k)A(k, k, k, k)^T = CA(k,k,k,k)^T
+\end{align}
+where $C$ is the dimension of the Clifford module and the $A$ matrices are:
+\begin{align}
+A(k,i,i,k) = \ &n [1+\epsilon \ \dagger] M_i^2 M_k + \notag \\
+&\epsilon_k I [1 + \epsilon] \Tr M_i^2 M_k + \notag \\
+&2\epsilon_i \Tr M_i [1 + \epsilon \ \dagger] M_i M_k + \notag \\
+&2\epsilon_k \epsilon_i M_i [1 + \epsilon] \Tr M_i M_k + \notag \\
+&\epsilon_k \Tr M_k [1 + \epsilon] M_i^2 + \notag \\
+&M_k [1 + \epsilon] \Tr M_i^2
+\end{align}
+\begin{align}
+A(k,i,k,i) = \ &n [1+\epsilon] M_i M_k M_i + \notag \\
+&\epsilon_k I [1 + \epsilon] \Tr M_i^2 M_k + \notag \\
+&\epsilon_i \Tr M_i [1 + \epsilon][1+\dagger] M_i M_k + \notag \\
+&2\epsilon_k \epsilon_i M_i [1 + \epsilon] \Tr M_i M_k + \notag \\
+&\epsilon_k \Tr M_k [1 + \epsilon] M_i^2 + \notag \\
+&M_k [1 + \epsilon] \Tr M_i^2
+\end{align}
+\begin{align}
+A(k,k,k,k) = \ &2n M_k^3 + 2\epsilon_k I \Tr M_k^3 + \notag \\
+&6 M_k \Tr M_k^2 + 6\epsilon_k M_k^2 \Tr M_k.
+\end{align}
 
 
 
